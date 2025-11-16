@@ -7,22 +7,7 @@ import { notConfiguredError } from '../errorMessages';
 import { getPluginConfig } from '../getPluginConfig';
 import { insertIgnoreComment, removeIgnoreComment } from '../commentOperations';
 import { getFilePathsWithErrors } from '../getFilePaths';
-import { execFile } from 'child_process';
-
-const isWorkspaceClean = (): Promise<boolean> => {
-  return new Promise((resolve) => {
-    let isWorkspaceClean = true;
-    const childProcess = execFile('git', ['status', '--porcelain'], { cwd: process.cwd() });
-
-    childProcess.stdout?.on('data', () => {
-      isWorkspaceClean = false;
-    });
-
-    childProcess.on('close', () => {
-      resolve(isWorkspaceClean);
-    });
-  });
-};
+import { isWorkspaceClean } from './isWorkspaceClean';
 
 const printResult = (notStrictFilePaths: string[], filesWithErrors: string[]) => {
   const numberOfIgnoreCommentsRemoved = notStrictFilePaths.length - filesWithErrors.length;
@@ -42,6 +27,7 @@ export const run = async () => {
         'Your working directory is not clean! Please commit or stash your changes before trying again',
       ),
     );
+    process.exit(1);
     return;
   }
 
