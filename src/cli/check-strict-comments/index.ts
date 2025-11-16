@@ -5,10 +5,7 @@ import chalk from 'chalk';
 import { waitWithSpinner } from '../waitWithSpinner';
 import { notConfiguredError } from '../errorMessages';
 import { getPluginConfig } from '../getPluginConfig';
-import {
-  insertIgnoreComment,
-  removeIgnoreComment,
-} from '../update-strict-comments/commentOperations';
+import { insertIgnoreComment, removeIgnoreComment } from '../commentOperations';
 import { getFilePathsWithErrors } from '../update-strict-comments/getFilePaths';
 import { execFile } from 'child_process';
 
