@@ -1,6 +1,6 @@
 import { mocked } from 'jest-mock';
 import { readFileSync, writeFileSync } from 'fs';
-import { insertIgnoreComment, removeStrictComment } from '../../commentOperations';
+import { insertIgnoreComment, removeStrictComment } from '../commentOperations';
 
 jest.mock('fs', () => ({
   readFileSync: jest.fn(),
