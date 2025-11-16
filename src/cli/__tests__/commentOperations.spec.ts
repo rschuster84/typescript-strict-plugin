@@ -52,7 +52,7 @@ describe('removeIgnoreComment', () => {
     readFileSyncMock.mockReturnValue('const x = 0;');
 
     // when
-    removeStrictComment('file.ts');
+    removeIgnoreComment('file.ts');
 
     // then
     expect(writeFileSyncMock).not.toBeCalled();
