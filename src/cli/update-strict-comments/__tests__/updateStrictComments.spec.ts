@@ -8,7 +8,7 @@ jest.mock('../../findStrictErrors', () => ({
   findStrictErrors: jest.fn(),
 }));
 
-jest.mock('../getFilePaths', () => ({
+jest.mock('../../getFilePaths', () => ({
   getFilePathsWithErrors: jest.fn(),
   getFilePathsOnPathWithoutErrors: jest.fn(),
 }));
@@ -18,7 +18,7 @@ jest.mock('../../isCommentPresent', () => ({
   isIgnoreCommentPresent: jest.fn(),
 }));
 
-jest.mock('../commentOperations', () => ({
+jest.mock('../../commentOperations', () => ({
   removeStrictComment: jest.fn(),
   insertIgnoreComment: jest.fn(),
 }));
