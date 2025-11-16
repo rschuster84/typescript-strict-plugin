@@ -1,6 +1,6 @@
 import { mocked } from 'jest-mock';
 import { isIgnoreCommentPresent, isStrictCommentPresent } from '../../isCommentPresent';
-import { getFilePathsWithErrors, getFilePathsOnPathWithoutErrors } from '../getFilePaths';
+import { getFilePathsWithErrors, getFilePathsOnPathWithoutErrors } from '../../getFilePaths';
 import { updateStrictComments } from '../updateStrictComments';
 import { insertIgnoreComment, removeStrictComment } from '../../commentOperations';
 

@@ -6,7 +6,7 @@ import { waitWithSpinner } from '../waitWithSpinner';
 import { notConfiguredError } from '../errorMessages';
 import { getPluginConfig } from '../getPluginConfig';
 import { insertIgnoreComment, removeIgnoreComment } from '../commentOperations';
-import { getFilePathsWithErrors } from '../update-strict-comments/getFilePaths';
+import { getFilePathsWithErrors } from '../getFilePaths';
 import { execFile } from 'child_process';
 
 const isWorkspaceClean = (): Promise<boolean> => {
