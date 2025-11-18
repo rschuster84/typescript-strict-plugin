@@ -8,12 +8,15 @@ import { getPluginConfig } from '../getPluginConfig';
 import { insertIgnoreComment, removeIgnoreComment } from '../commentOperations';
 import { getFilePathsWithErrors } from '../getFilePaths';
 import { isWorkspaceClean } from './isWorkspaceClean';
+import { pluralize } from '../../common/utils';
 
 const printResult = (notStrictFilePaths: string[], filesWithErrors: string[]) => {
   const numberOfIgnoreCommentsRemoved = notStrictFilePaths.length - filesWithErrors.length;
   if (numberOfIgnoreCommentsRemoved > 0) {
     console.log(
-      chalk.yellow(`=> Removed strict ignore comments in ${numberOfIgnoreCommentsRemoved} files`),
+      chalk.yellow(
+        `=> Removed strict ignore comments in ${pluralize('file', numberOfIgnoreCommentsRemoved)}`,
+      ),
     );
   } else {
     console.log(chalk.green('=> No strict ignore comments changed'));
