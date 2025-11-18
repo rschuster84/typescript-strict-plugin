@@ -5,10 +5,11 @@ interface TestType {
   bar: string;
 }
 
-const foo: TestType | null = null;
-
-const isTestType = (obj: any): obj is TestType => {
-  return obj != null && typeof obj === 'object' && obj.hasOwnProperty('bar') && typeof obj.bar === 'string';
+const getFoo = (): TestType | undefined => {
+  // Simulate fetching or computing the value
+  return Math.random() > 0.5 ? { bar: 'value from getFoo' } : undefined;
 }
 
-const barValue: string = isTestType(foo) ? foo.bar : 'some default value';
+const foo: TestType | undefined = getFoo();
+
+const barValue: string = foo.bar;
