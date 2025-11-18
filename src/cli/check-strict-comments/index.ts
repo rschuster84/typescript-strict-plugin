@@ -15,7 +15,10 @@ const printResult = (notStrictFilePaths: string[], filesWithErrors: string[]) =>
   if (numberOfIgnoreCommentsRemoved > 0) {
     console.log(
       chalk.yellow(
-        `=> Removed strict ignore comments in ${pluralize('file', numberOfIgnoreCommentsRemoved)}`,
+        `=> Removed strict ignore comments in ${numberOfIgnoreCommentsRemoved} ${pluralize(
+          'file',
+          numberOfIgnoreCommentsRemoved,
+        )}`,
       ),
     );
   } else {
