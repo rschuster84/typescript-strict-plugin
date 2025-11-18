@@ -96,7 +96,7 @@ describe('check-strict-comments root', () => {
     expect(console.log).toHaveBeenCalledWith(expect.stringMatching(/# files not strict:/i), 3);
     expect(console.log).toHaveBeenCalledWith(expect.stringMatching(/# files with errors:/i), 2);
     expect(console.log).toHaveBeenCalledWith(
-      expect.stringMatching(/Removed strict ignore comments in 1 files/i),
+      expect.stringMatching(/Removed strict ignore comments in 1 file/i),
     );
   });
 
